@@ -34,10 +34,10 @@ async function reviewCode() {
   try {
     setLoading(true);
 
-    const response = await axios.post(
-      "http://localhost:3000/ai/get-review",
-      { code }
-    );
+   const response = await axios.post(
+  "https://ai-code-reviewer-o95h.onrender.com/ai/get-review",
+  { code }
+);
 
     setReview(response.data);
 
@@ -76,12 +76,12 @@ async function askQuestion() {
     setMessages(prev => [...prev, userMessage]);
 
     const response = await axios.post(
-      "http://localhost:3000/ai/chat",
-      {
-        code,
-        question
-      }
-    );
+  "https://ai-code-reviewer-o95h.onrender.com/ai/chat",
+  {
+    code,
+    question
+  }
+);
 
     const aiMessage = {
       role: "assistant",
